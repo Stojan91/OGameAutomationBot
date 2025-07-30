@@ -29,14 +29,16 @@ Zainstaluj Pythona (np. 3.10):
 <CODE>
 brew install python@3.10
 </CODE>
+
   
 Dodaj Pythona do PATH:
 
 
 <CODE>
 echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
-</CODE>
+
 source ~/.zshrc
+</CODE>
 
 
 Sprawdź wersję poleceniem:
