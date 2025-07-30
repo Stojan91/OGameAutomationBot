@@ -1,0 +1,61 @@
+{
+  "screen_width": 1366,
+  "screen_height": 768,
+
+  "click_coordinates": {
+    "metal_mine": [380, 310],
+    "crystal_mine": [480, 310],
+    "deuterium_mine": [580, 310],
+
+    "robotics": [300, 600],
+    "nanite_factory": [400, 600],
+    "shipyard": [500, 600],
+
+    "energy": [300, 200],
+    "combustion": [400, 200],
+    "computer": [500, 200],
+
+    "rocket": [200, 800],
+    "laser": [300, 800],
+    "heavy": [400, 800]
+  },
+
+  "minimum_resources": {
+    "metal": 0,
+    "crystal": 0,
+    "deuterium": 0
+  },
+
+  "costs": {
+    "metal": {"metal": 60, "crystal": 15, "deuterium": 0},
+    "crystal": {"metal": 48, "crystal": 24, "deuterium": 0},
+    "deuterium": {"metal": 225, "crystal": 75, "deuterium": 0},
+
+    "robotics": {"metal": 400, "crystal": 120, "deuterium": 200},
+    "nanite_factory": {"metal": 100000, "crystal": 50000, "deuterium": 10000},
+    "shipyard": {"metal": 400, "crystal": 200, "deuterium": 100},
+
+    "energy": {"metal": 800, "crystal": 400, "deuterium": 200},
+    "combustion": {"metal": 400, "crystal": 800, "deuterium": 400},
+    "computer": {"metal": 200, "crystal": 400, "deuterium": 600},
+
+    "rocket": {"metal": 200, "crystal": 0, "deuterium": 0},
+    "laser": {"metal": 1500, "crystal": 500, "deuterium": 0},
+    "heavy": {"metal": 6000, "crystal": 2000, "deuterium": 0}
+  },
+
+  "max_levels": {
+    "metal": 10,
+    "crystal": 10,
+    "deuterium": 8,
+    "robotics": 4,
+    "nanite_factory": 1,
+    "shipyard": 3,
+    "energy": 4,
+    "combustion": 3,
+    "computer": 2,
+    "rocket": 20,
+    "laser": 10,
+    "heavy": 5
+  }
+}
