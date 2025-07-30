@@ -10,49 +10,65 @@ Google Chrome (najnowsza wersja)
 Zainstalowane biblioteki (wymienione w requirements.txt)
 
 Instalacja
+
+
+
 macOS
+
+
 Zainstaluj Homebrew (jeśli jeszcze nie masz):
+
 
 bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 Zainstaluj Pythona (np. 3.10):
 
+
 bash
 brew install python@3.10
 Dodaj Pythona do PATH:
+
 
 bash
 echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 Sprawdź wersję poleceniem:
 
+
 bash
 python3 --version
 Linux (Ubuntu/Debian)
 Zainstaluj Pythona:
+
 
 bash
 sudo apt update
 sudo apt install python3 python3-pip
 Sprawdź wersję:
 
+
 bash
 python3 --version
 Windows
 Pobierz instalator z python.org
 
+
 Podczas instalacji zaznacz opcję „Add Python to PATH”
 
+
 Sprawdź wersję:
+
 
 powershell
 python --version
 Instalacja zależności
 W katalogu projektu (tam gdzie jest requirements.txt) uruchom:
 
+
 bash
 pip install -r requirements.txt
 Zawartość requirements.txt:
+
 
 text
 undetected-chromedriver
@@ -61,7 +77,9 @@ beautifulsoup4
 Ustawienia gry i konfiguracji
 Skonfiguruj plik config.json zgodnie z własną rozdzielczością i pozycjami klikanych elementów.
 
+
 Przykładowe fragmenty config.json:
+
 
 json
 {
@@ -84,19 +102,28 @@ json
     "shipyard": 3
   }
 }
+
+
 Uruchomienie bota
+
+
 Uruchom skrypt:
+
 
 bash
 python3 ogame_bot.py --server https://sXNN.en.ogame.gameforge.com
 Zastąp sXNN odpowiednim serwerem.
 
+
 Jak działa bot
 Bot otwiera przeglądarkę Chrome i pozwala na ręczne zalogowanie.
 
+
 Po wykryciu gry przejmuje kartę z rozgrywką.
 
+
 W pętli cyklicznie:
+
 
 Sprawdza, czy coś jest w trakcie budowy.
 
