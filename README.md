@@ -2,6 +2,7 @@ OGame Automation Bot
 Automatyczny bot do zarządzania rozwojem planet w OGame: buduje kopalnie, infrastrukturę, badania i obronę na podstawie łatwo edytowalnego pliku konfiguracyjnego.
 
 Wymagania
+
 Python 3.8+ (polecany: 3.9, 3.10, 3.11)
 
 Przeglądarka Google Chrome (najlepiej najnowsza)
@@ -13,7 +14,9 @@ Polecam środowisko virtualenv (opcjonalnie)
 Narzędzia i zależności z pliku requirements.txt
 
 Instalacja Pythona
+
 macOS
+
 Zainstaluj Homebrew jeśli jeszcze go nie masz:
 
 text
