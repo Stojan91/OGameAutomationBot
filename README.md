@@ -19,39 +19,50 @@ macOS
 Zainstaluj Homebrew (jeśli jeszcze nie masz):
 
 
-bash
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
 Zainstaluj Pythona (np. 3.10):
 
 
-bash
+<CODE>
 brew install python@3.10
+</CODE>
+  
 Dodaj Pythona do PATH:
 
 
-bash
+<CODE>
 echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
+</CODE>
 source ~/.zshrc
+
+
 Sprawdź wersję poleceniem:
 
 
-bash
+<CODE>
 python3 --version
+</CODE>
+
 Linux (Ubuntu/Debian)
+
+
 Zainstaluj Pythona:
 
 
-bash
+<CODE>
 sudo apt update
 sudo apt install python3 python3-pip
 Sprawdź wersję:
+</CODE>
 
-
-bash
+<CODE>
 python3 --version
 Windows
 Pobierz instalator z python.org
-
+</CODE>
 
 Podczas instalacji zaznacz opcję „Add Python to PATH”
 
@@ -59,28 +70,33 @@ Podczas instalacji zaznacz opcję „Add Python to PATH”
 Sprawdź wersję:
 
 
-powershell
+<CODE>
 python --version
 Instalacja zależności
 W katalogu projektu (tam gdzie jest requirements.txt) uruchom:
+</CODE>
 
-
-bash
+<CODE>
 pip install -r requirements.txt
+</CODE>
+
 Zawartość requirements.txt:
 
 
-text
+<CODE>
 undetected-chromedriver
 selenium
 beautifulsoup4
+</CODE>
+
 Ustawienia gry i konfiguracji
+
 Skonfiguruj plik config.json zgodnie z własną rozdzielczością i pozycjami klikanych elementów.
 
 
 Przykładowe fragmenty config.json:
 
-
+<CODE>
 json
 {
   "screen_width": 1366,
@@ -102,7 +118,7 @@ json
     "shipyard": 3
   }
 }
-
+</CODE>
 
 Uruchomienie bota
 
@@ -110,10 +126,10 @@ Uruchomienie bota
 Uruchom skrypt:
 
 
-bash
+<CODE>
 python3 ogame_bot.py --server https://sXNN.en.ogame.gameforge.com
 Zastąp sXNN odpowiednim serwerem.
-
+</CODE>
 
 Jak działa bot
 Bot otwiera przeglądarkę Chrome i pozwala na ręczne zalogowanie.
