@@ -1,127 +1,123 @@
 OGame Automation Bot
-Automatyczny bot do zarządzania rozwojem planet w OGame: buduje kopalnie, infrastrukturę, badania i obronę na podstawie łatwo edytowalnego pliku konfiguracyjnego.
+Automatyczny bot do zarządzania rozwojem planet w OGame.
+Buduje kopalnie, infrastrukturę, badania i obronę według konfiguracji.
 
 Wymagania
+Python ≥ 3.8 (rekomendowany 3.9–3.11)
 
-Python 3.8+ (polecany: 3.9, 3.10, 3.11)
+Google Chrome (najnowsza wersja)
 
-Przeglądarka Google Chrome (najlepiej najnowsza)
+Zainstalowane biblioteki (wymienione w requirements.txt)
 
-Serwer OGame (np. s264-pl.ogame.gameforge.com)
-
-Polecam środowisko virtualenv (opcjonalnie)
-
-Narzędzia i zależności z pliku requirements.txt
-
-Instalacja Pythona
-
+Instalacja
 macOS
+Zainstaluj Homebrew (jeśli jeszcze nie masz):
 
-Zainstaluj Homebrew jeśli jeszcze go nie masz:
-
-text
+bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-Zainstaluj wybraną wersję Pythona (np. Python 3.10):
+Zainstaluj Pythona (np. 3.10):
 
-text
+bash
 brew install python@3.10
-Upewnij się, że ścieżka do Pythona jest w $PATH (jeśli masz kilka wersji):
+Dodaj Pythona do PATH:
 
-text
+bash
 echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
-Sprawdź wersję:
+Sprawdź wersję poleceniem:
 
-text
+bash
 python3 --version
 Linux (Ubuntu/Debian)
-Zainstaluj Pythona (przykład dla 3.10):
+Zainstaluj Pythona:
 
-text
+bash
 sudo apt update
-sudo apt install python3.10 python3-pip
+sudo apt install python3 python3-pip
 Sprawdź wersję:
 
-text
+bash
 python3 --version
 Windows
-Pobierz Python 3.10 i zainstaluj, zaznaczając opcję „Add Python to PATH”.
+Pobierz instalator z python.org
 
-Sprawdź w PowerShellu:
+Podczas instalacji zaznacz opcję „Add Python to PATH”
+
+Sprawdź wersję:
 
 powershell
 python --version
-Jeśli posiadasz wiele wersji, użyj:
+Instalacja zależności
+W katalogu projektu (tam gdzie jest requirements.txt) uruchom:
 
-powershell
-py -3.10
-Instalacja bibliotek bota
-Pobierz repozytorium na swój komputer.
-
-Zainstaluj wymagania:
-
-text
-pip3 install -r requirements.txt
-Plik requirements.txt zawiera:
+bash
+pip install -r requirements.txt
+Zawartość requirements.txt:
 
 text
 undetected-chromedriver
 selenium
 beautifulsoup4
-(Opcjonalnie) Aktywuj wirtualne środowisko:
+Ustawienia gry i konfiguracji
+Skonfiguruj plik config.json zgodnie z własną rozdzielczością i pozycjami klikanych elementów.
 
-text
-python3 -m venv venv
-source venv/bin/activate   # macOS/Linux
-.\venv\Scripts\activate    # Windows
-Jak używać bota
-Wstaw własne współrzędne do config.json
-Ustaw poziomy docelowe i pozycje przycisków do kliknięcia zgodnie z Twoim ekranem.
-
-Uruchom z terminala/PowerShella (podaj swój link serwera OGame):
-
-text
-python3 ogame_bot.py --server https://s264-pl.ogame.gameforge.com
-Po uruchomieniu zobaczysz przeglądarkę Chrome –
-ZALOGUJ SIĘ RĘCZNIE na swoje konto OGame, wybierz serwer, kliknij „Play” i poczekaj na załadowanie widoku gry („page=ingame...” w URL).
-
-Bot sam przełączy się na odpowiednią kartę i zacznie działać w pętli –
-będzie klikał na wybrane przez Ciebie pozycje i budował jednostki zgodnie ze strategią w pliku config.json.
-
-Aby zakończyć działanie, zamknij terminal lub przerwij program (Ctrl+C).
-
-Własna konfiguracja
-Zmień pozycje kliknięć i poziomy docelowe budynków/badań/obrony w pliku config.json.
-
-Możesz rozbudować mapę obiektów (np. dodać nowe typy obrony czy badania), dopisując ich koszty i pozycje kliknięcia.
-
-Przykładowy fragment config.json:
+Przykładowe fragmenty config.json:
 
 json
-"click_coordinates": {
-  "metal_mine": [380, 310],
-  "crystal_mine": [480, 310],
-  ...
-},
-"max_levels": {
-  "metal": 10,
-  "crystal": 10,
-  "robotics": 5,
-  ...
+{
+  "screen_width": 1366,
+  "screen_height": 768,
+  "click_coordinates": {
+    "metal_mine": [380, 310],
+    "crystal_mine": [480, 310],
+    "deuterium_mine": [580, 310],
+    "robotics": [300, 600],
+    "nanite_factory": [400, 600],
+    "shipyard": [500, 600]
+  },
+  "max_levels": {
+    "metal": 10,
+    "crystal": 10,
+    "deuterium": 8,
+    "robotics": 4,
+    "nanite_factory": 1,
+    "shipyard": 3
+  }
 }
-Najczęstsze problemy
-Nie klika w żądane miejsce?
-Popraw współrzędne kliknięć w config.json i upewnij się, że masz odpowiednią rozdzielczość okna przeglądarki!
+Uruchomienie bota
+Uruchom skrypt:
 
-Bot nie widzi gry?
-Musisz samemu wejść do gry, bot przejmie ją dopiero po zalogowaniu.
+bash
+python3 ogame_bot.py --server https://sXNN.en.ogame.gameforge.com
+Zastąp sXNN odpowiednim serwerem.
 
-Błąd z add_argument?
-Upewnij się, że wszystkie opcje w selenium_client.py używają pojedynczego argumentu, np. opts.add_argument("--lang=pl-PL").
+Jak działa bot
+Bot otwiera przeglądarkę Chrome i pozwala na ręczne zalogowanie.
 
-Uwaga / Bezpieczeństwo
-Korzystanie z bota na własne ryzyko!
-OGame oficjalnie zabrania automatyzacji, grozi tym banem. Bot nie gwarantuje 100% bezpieczeństwa — używasz go na własną odpowiedzialność.
+Po wykryciu gry przejmuje kartę z rozgrywką.
 
-Powodzenia!
-Chcesz dodać niestandardową strategię lub obsługę innych obiektów — otwórz issue lub pull request w repozytorium.
+W pętli cyklicznie:
+
+Sprawdza, czy coś jest w trakcie budowy.
+
+Jeśli nie, podejmuje działania zgodnie z konfiguracją (budowa kopalni, badania itd.).
+
+Klikania są realizowane jako symulowane kliknięcia JavaScript na pozycjach wskazanych w config.json.
+
+Po każdym działaniu bot robi przerwę dopasowaną do obecnego statusu (dłużej jeśli trwa budowa).
+
+Bezpieczeństwo i uwagi
+Korzystasz na własną odpowiedzialność.
+
+Oficjalny regulamin OGame zabrania stosowania botów, użycie automatyzacji grozi banem.
+
+Uruchamiaj bota ostrożnie i nie pozostawiaj go bez nadzoru.
+
+Wsparcie i rozwój
+Pytania i problemy zgłaszaj na Issues GitHub.
+
+Kontrybucje do rozwoju mile widziane.
+
+Dokumentację i konfigurację można rozwijać.
+
+Dziękuję za korzystanie z bota i życzę powodzenia!
