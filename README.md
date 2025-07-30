@@ -48,6 +48,10 @@ Sprawdź wersję poleceniem:
 python3 --version
 </CODE>
 
+
+
+
+
 Linux (Ubuntu/Debian)
 
 
@@ -90,6 +94,9 @@ undetected-chromedriver
 selenium
 beautifulsoup4
 </CODE>
+
+
+
 
 Ustawienia gry i konfiguracji
 
