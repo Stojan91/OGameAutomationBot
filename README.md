@@ -61,14 +61,19 @@ Zainstaluj Pythona:
 <CODE>
 sudo apt update
 sudo apt install python3 python3-pip
-Sprawdź wersję:
 </CODE>
+
+
+Sprawdź wersję:
+
 
 <CODE>
 python3 --version
 Windows
-Pobierz instalator z python.org
 </CODE>
+
+Pobierz instalator z python.org
+
 
 Podczas instalacji zaznacz opcję „Add Python to PATH”
 
